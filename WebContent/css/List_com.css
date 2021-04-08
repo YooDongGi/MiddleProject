@@ -1,0 +1,397 @@
+@charset "UTF-8";
+
+body {
+	font: 400 15px/1.8 Lato, sans-serif;
+	min-width : 1500px;
+}
+
+h3, h4, h5 {
+	margin: 10px 0 30px 0;
+	font-size: 20px;
+	color: black;
+}
+
+.container {
+	padding: 80px 120px;
+	height: 800px;
+}
+
+
+#myNavbar {
+	height: 600px;
+}
+
+.navbar{
+	font-family: Montserrat, sans-serif;
+	padding-top: 10px;
+	padding-bottom: 100px;
+	background-color: white;
+	font-size: 15px !important;
+	height: 130px;
+	opacity: 0.9;
+	border: 0;
+}
+
+.navbar{
+	font-family: Montserrat, sans-serif;
+	padding-top: 10px;
+	padding-bottom: 100px;
+	background-color: white;
+	font-size: 15px !important;
+	height: 130px;
+	opacity: 0.9;
+	border: 0;
+}
+
+.navbar-nav {
+	margin-right: 30px;
+	float: right;
+	text-align: center;
+	color: black;
+}
+
+.navbar-brand {
+	color: #339900 !important;
+	text-align: center;
+	margin: 5px;
+}
+
+.navbar-brand {
+	font-size: 70px;
+	text-align: center;
+	margin: 5px;
+}
+
+.mySlides {
+	color: white;
+	font-weight: 400;
+	width: 100%;
+	height: 130px;
+	background: #343838;
+	padding: 1px 40px 10px 320px;
+}
+
+.banner {
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 10px;
+}
+
+#band {
+	margin-top: 135px;
+	height: 1000px;
+}
+
+#left {
+	width: 400px;
+	height: 1000px;
+	float: left;
+/* 	border: 5px solid red; */
+	padding: 20px;
+	padding-left: 200px;
+	background: white;
+	font-size: 1.1em;
+}
+
+#left a:hover {
+	color: gray;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+.com {
+	color: black;
+}
+
+.search {
+	margin-left: 43%;
+	margin-top: 5px;
+	float: left;
+}
+
+#cont {
+/* 	border: 5px solid red; */
+	float: left;
+	min-height: 500px;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.list {
+	position: absolute;
+	float: left;
+	width: 300px;
+	height: 250px;
+	padding-left: 30px;
+}
+
+#center {
+	min-height: 946px;
+	min-width: 51%;
+/* 	border: 5px solid blue; */
+	display: inline-block;
+	float: left;
+}
+
+#reply {
+/* 	border: 5px solid red; */
+	float: left;
+	height: auto;
+	min-width: 51%;
+	margin-top: 30px;
+	padding-left: 30px;
+}
+
+#right {
+	/*  position: absolute; */
+	height: 946px;
+	min-width: 20%;
+	float: left;
+}
+
+footer {
+	float: left;
+	width: 100%;
+	background: #011627;
+	color: white;
+	padding: 10px;
+}
+
+.ul {
+	float: left;
+	margin-left: 70px;
+}
+
+.made {
+	display: inline-block;
+	/* text-align: left; */
+}
+
+#hr {
+	color: black;
+}
+
+#abc {
+	float : right;
+}
+
+#BoardAddform {
+	
+	padding-left: 100px;
+	
+}
+
+/* 게시글 테이블 class 이름 */
+.BList {
+	
+	margin : 30px;
+	
+} 
+.BList td{
+	border-bottom : 1px solid gray;
+	width : 150px;
+	height : 50px;
+	padding-left : 10px;
+}
+.BList th {
+	border-bottom : 3px double black;
+	width : 150px;	
+	padding-left : 10px;
+	font-size: 20px;
+}
+.BList .title {
+	
+	width : 400px;
+	
+}
+.BList .date {
+	width : 200px;
+}
+.BList .ox {
+	width : 50px;
+}
+
+/* 장바구니 테이블(왼쪽) css */
+.middle {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+    max-width: 1000px;
+    
+}
+#band{
+	min-height: 800px;
+}
+#lecture_img{
+    display: block;
+	height: 100%;
+    width: 100%;
+}
+.is_thumbnail{
+	display: block;
+    position: relative;
+    padding-top: .5rem;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+.product_item .content_middle .product_meta button {
+    display: block;
+    margin-left: auto;
+    margin-top: .15rem;
+}
+#columns, #columns:last-child {
+    margin: 0;
+	box-sizing :  border-box;
+}
+#columns:not(.is-desktop) {
+    display: flex;
+}
+.card {
+    background-color: #fff;
+    box-shadow: 0 2px 3px rgba(0,10,18,.1), 0 0 0 1px rgba(0,10,18,.1);
+    color: #454545;
+    max-width: 100%;
+    position: relative;
+    
+}
+.cart #main .column .box {
+    padding: 0;
+    border-radius: .2rem;
+}
+.column {
+    padding: .5rem;
+}
+.box {
+    background-color: #fff;
+    border-radius: 4px;
+    color: #333;
+}
+.column.is-3{
+    width: 25%;
+    float: left;
+}
+.content_middle {
+    width: 100%;
+}
+.product_item_middle {
+    border: 1px solid #dbdbdb; 
+    min-height : 200px;
+    min-width : 800px;
+}
+.product_title{
+	padding-right: .5rem;
+	box-sizing: inherit;
+}
+.product_meta{
+	 margin-left: auto;
+	 margin-top: -5px;
+}
+.card-content {
+    padding: inherit;
+}
+.card-content, .card-footer {
+    background-color: transparent;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+    cursor: pointer;
+}
+.product_meta .product_amount {
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.button {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(.375em - 1px) .75em;
+    text-align: center;
+    white-space: nowrap;
+}
+.button.is-small {
+    border-radius: 3px;
+    font-size: small;
+}
+
+:after, :before {
+    box-sizing: inherit;
+}
+/* 장바구니 테이블(오른쪽) css */
+.card.checkout_form {
+    border-radius: .2rem;
+}
+.card-content {
+    padding: .5rem;
+}
+.card-content, .card-footer {
+    background-color: transparent;
+}
+.column.is-4 {
+    flex: none;
+    width: fit-content;
+    float : right;
+    margin: auto;
+}
+.total_amount h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.total_amount h2 span {
+    float: right;
+}
+.field:not(:last-child) {
+    margin-bottom: .75rem;
+}
+.input {
+	height: auto;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #dbdbdb;
+    box-shadow: none;
+    background: #f6f6f6;
+    color: #5f5f5f;
+}
+.card-footer {
+    border-top: 1px solid #dbdbdb;
+    align-items: stretch;
+    display: flex;
+}
+.card-content label.label {
+    color: #595959;
+    display: flex;
+}
+.checkbox{
+	font-size: .6rem;
+}
+.has-text-info {
+    color: #3298dc!important;
+}
+.button.is-fullwidth {
+    display: flex;
+    width: 100%;
+}
+.button.is-link {
+    background-color: #1dc078;
+    border-color: transparent;
+    color: #fff;
+}
+.has-text-danger {
+    color: #f14668;
+}
+.box.product_item_list{
+	width : 100%;
+}
+.BList .ox {
+	width : 50px;
+}

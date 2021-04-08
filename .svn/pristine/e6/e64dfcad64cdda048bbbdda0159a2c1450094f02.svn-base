@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/dtd.map-2.dtd">
+	
+<sqlMap namespace="report">
+
+	<insert id = "insertReport" parameterClass = "reportVo">
+		INSERT INTO report (report_no, mem_no, post_no, report_status, reason, count) 
+			VALUES(report_seq.nextVal, #mem_no#, #post_no#, 1, #reason#, ( SELECT COUNT(*)+1 FROM report WHERE mem_no = #mem_no# ))
+			<selectKey resultClass="int" keyProperty="report_no">
+				SELECT report_seq.currval FROM dual
+			</selectKey>
+	</insert>
+	<select id = "selectReport" resultClass="reportVo" parameterClass = "int" >
+		select * from report where report_status = #report_status# order by report_no desc
+	</select>
+	
+	 <update id="updateReport" parameterClass = "reportVo">
+	 	update report set 
+			report_status = #report_status#
+			where report_no = #report_no#
+	 </update>
+	 
+	<select id = "selectReportCnt" resultClass="int" parameterClass = "int" >
+		select count(*) from report where report_status = 9 and mem_no = #mem_no#
+	</select>
+	
+	
+	<update id = "black" parameterClass = "int" >
+		update member set
+			state = 4
+			where mem_no = #mem_no#
+	</update>
+	
+	<delete id = "deleteReport" parameterClass = "int">
+		delete report where report_no = #report_no#
+	</delete>
+	
+<!-- 	<select id = "getReport  -->
+
+</sqlMap>

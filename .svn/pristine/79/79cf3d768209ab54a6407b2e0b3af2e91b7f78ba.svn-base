@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	이 xml 문서는 실행할 sql 문을 작성하는 문서입니다.
+
+ -->
+ 
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd-map-2.dtd">
+	
+	
+<sqlMap namespace="lecture">
+	
+	 <select id="listAll" resultClass="LectureVO">
+	 	select * from lecture
+	 </select>
+	 
+	 <update id="update" parameterClass="LectureVO">
+	 	update lecture set 
+			intro		    = #intro#,
+			lec_nm 			= #lec_nm#,
+			price	 		= #price#,
+			detail_cont 	= #detail_cont#,
+			preview_video   = #preview_video# 
+			
+			where lec_title = #lec_title#
+	 </update>
+	 
+	 <select id="listCategory" resultClass="lectureVo" parameterClass="String">
+	 	select * from lecture where category = #category#
+	 </select>
+	 
+	 <select id="lectureDif" resultClass="lectureVo" parameterClass="lectureVo">
+	 	select * from lecture where lower(category) = #category# and lec_nm Like '%' || #lec_nm# || '%'
+	 </select>
+	 
+	 <select id="lecture" resultClass="lectureVo" parameterClass="int">
+	 	select * from lecture where lec_title= #lec_title#
+	 </select>
+	 
+	 <select id="classList" resultClass="classVo" parameterClass="int">
+	 	select * from class where lec_title= #lec_title# order by class_nm
+	 </select>
+	 
+	 <insert id="lectureInsert" parameterClass="lectureVo">
+	 	insert into lecture values ((select nvl(max(lec_title),0)+1 from lecture),
+	 			#mem_no#,
+	 			#category#,
+	 			#intro#,
+	 			#lec_nm#,
+	 			#price#,
+	 			#detail_cont#,
+	 			#preview_video#)
+	 			
+	 				<selectKey keyProperty="lec_title" resultClass="int">
+						select max(lec_title) from lecture
+					</selectKey>
+	 </insert>
+	 
+	 <insert id="classInsert" parameterClass="classVo">
+	 	insert into class values ((select nvl(max(class_list),0)+1 from class),#lec_title#,#class_nm#,#video#)
+	 	
+	 	<selectKey keyProperty="class_list" resultClass="int">
+						select max(class_list) from class
+					</selectKey>
+	 </insert>
+	 
+	 
+	 <update id="classUpdate" parameterClass="ClassVO">
+	 	update class set 
+			class_nm = #class_nm#,
+			video = #video#
+			where class_list = #class_list# and lec_title = #lec_title#
+	 </update>
+	 
+	 <select id="getsearchcategory" parameterClass="String" resultClass="lectureVo">
+	 	select * from lecture where lower(category)=#category# 
+	 </select>
+</sqlMap>

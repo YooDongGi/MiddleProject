@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+body {
+	font: 400 15px/1.8 Lato, sans-serif;
+	min-width: 1900px;
+}
+
+h4, h5, h3{
+	margin: 10px 0 30px 0;
+	font-size: 20px;
+	color: black;
+}
+
+h3 {
+	font-size: 20px;
+	color: #339900 !important;
+}
+
+.container {
+	padding: 80px 120px;
+	height: 800px;
+}
+
+.
+#myNavbar {
+	height: 600px;
+}
+
+.navbar {
+	font-family: Montserrat, sans-serif;
+	padding-top: 10px;
+	padding-bottom: 100px;
+	background-color: white;
+	border: 0;
+	font-size: 15px !important;
+	height: 130px;
+	opacity: 0.9;
+}
+
+.navbar-nav {
+	float: right;
+	text-align: center;
+	color: black;
+	margin-right: 30px;
+}
+
+.navbar-brand {
+	color: #339900 !important;
+	text-align: center;
+	margin: 5px;
+	font-size: 70px;
+}
+
+
+.mySlides {
+	color: white;
+	font-weight: 400;
+	width: 100%;
+	height: 130px;
+	background: #343838;
+	padding: 1px 40px 10px 320px;
+}
+
+.banner {
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 10px;
+}
+
+#band {
+	margin-top: 135px;
+	height: 1000px;
+}
+
+#left {
+	width: 750px;
+	min-height: 1000px;
+	float: left;
+/* 	border: 5px solid red; */
+	padding-left: 550px;
+	padding-top: 100px;
+	background: white;
+	font-size: 1.1em;
+}
+
+#left a:hover {
+	color: gray;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+img {
+/* 	width: 100%; */
+}
+
+.com {
+	color: black;
+}
+
+.search {
+	margin-left: 43%;
+	margin-top: 5px;
+	float: left;
+}
+
+#cont {
+	/*  border: 5px solid red; */
+	float: left;
+	height: auto;
+	min-width: 60%;
+	margin-left: 70px;
+	padding-top: 100px;
+	padding-left: 30px;
+}
+
+.list {
+	position: absolute;
+	float: left;
+	width: 200px;
+	height: 250px;
+	padding-left: 30px;
+}
+
+#center {
+	min-height: 946px;
+	min-width: 40%;
+	/*  border: 5px solid blue; */
+	display: inline-block;
+	float: left;
+}
+
+p {
+	text-align: right;
+}
+
+#right {
+	/* border: 5px solid red; */
+	/*  position: absolute; */
+	height: 946px;
+	min-width: 12%;
+	float: left;
+}
+
+.footer {
+	float: left;
+	width: 100%;
+	background: #011627;
+	color: white;
+	padding: 10px;
+}
+
+.ul {
+	float: left;
+	margin-left: 70px;
+}
+
+.made {
+	display: inline-block;
+	/* text-align: left; */
+}
+
+#hr {
+	color: white;
+}

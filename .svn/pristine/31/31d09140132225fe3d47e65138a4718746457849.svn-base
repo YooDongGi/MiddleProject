@@ -1,0 +1,20 @@
+package vo;
+
+public class BoardVO {
+	private int board_no;
+	private String board_nm;
+	
+	public int getBoard_no() {
+		return board_no;
+	}
+	public void setBoard_no(int board_no) {
+		this.board_no = board_no;
+	}
+	public String getBoard_nm() {
+		return board_nm;
+	}
+	public void setBoard_nm(String board_nm) {
+		this.board_nm = board_nm;
+	}
+	
+}

@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+body {
+	font: 400 15px/1.8 Lato, sans-serif;
+	min-width: 1800px;
+}
+
+.isotope_filters a.active, .isotope_filters a:hover {
+	border-color: #ffb20e;
+	background-color: #ffb20e;
+}
+
+.isotope_filters a {
+	font-weight: 400;
+	border: 2px solid #1dbb90;
+	color: #fff;
+	background-color: #1dbb90;
+	webkit-border-radius: 4px;
+	moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.isotope_filters a {
+	display: inline-block;
+	margin: 0 4px 4px 0;
+	text-align: center;
+	padding: .75em 1.5em;
+	font-size: .75em;
+	line-height: 1.3em;
+}
+
+.sc_blogger .isotope_filters {
+	margin: 1.5em 0 1em;
+}
+
+.isotope_filters {
+	overflow: hidden;
+	text-align: center;
+	padding-bottom: .5em;
+}
+
+.isotope_wrap .isotope_item .post_featured, .isotope_wrap .isotope_item_courses_1 .post_featured
+	{
+	border-color: #1eaace;
+}
+
+.isotope_wrap .isotope_item_courses .post_featured, .isotope_wrap .isotope_item_portfolio .post_featured,
+	.isotope_wrap .isotope_item_square .post_featured, .isotope_wrap .isotope_item_grid .post_featured
+	{
+	border-bottom: 0;
+}
+
+.isotope_wrap .isotope_item .post_featured {
+	margin-bottom: 0;
+	border-bottom: 5px solid #f0f0f0;
+}
+
+h3, h4, h5 {
+	/* margin: 10px 0 30px 0; */
+	font-size: 20px;
+	color: black;
+}
+
+.
+#myNavbar {
+	height: 600px;
+}
+
+.navbar {
+	font-family: Montserrat, sans-serif;
+	padding-top: 10px;
+	padding-bottom: 100px;
+	background-color: white;
+	border: 0;
+	font-size: 15px !important;
+	height: 130px;
+	opacity: 0.9;
+}
+
+.navbar-nav {
+	margin-right: 30px;
+	float: right;
+	text-align: center;
+	color: black;
+}
+
+.navbar .navbar-brand {
+	color: #339900 !important;
+	text-align: center;
+	margin: 5px;
+	font-size: 70px;
+}
+
+.navbar-nav li a:hover {
+	color: #339900 !important;
+	text-align: center;
+}
+
+.navbar-nav li .{
+	color : #339900 !important;
+	background-color:#29292c !important;
+	text-align :center;
+}
+.mySlides {
+	color: white;
+	font-weight: 400;
+	width: 100%;
+	height: 130px;
+	background: #343838;
+	padding: 1px 40px 10px 320px;
+	margin-top: 200px;
+}
+
+.banner {
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 10px;
+}
+
+#band {
+	/* margin-top: 135px; */
+	height: 1000px;
+	margin-left: 200px;
+}
+
+.inited { /*새로 추가*/
+	min-width: 220px;
+	height: 120px;
+	border: 5px solid white;
+	background: white;
+	font-size: 1.4em;
+}
+
+#left a:hover {
+	color: gray;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+#cont {
+/* 	border: 5px solid red; */
+	float: left;
+	height: auto;
+	width: 90%;
+	margin: 60px 30px;
+	padding-left: 100px;
+}
+
+.list {
+	position: absolute;
+	float: left;
+	width: 300px;
+	height: 250px;
+	padding-left: 30px;
+}
+
+#center {
+	min-height: 946px;
+	min-width: 75%;
+	border: 5px solid green;
+	display: inline-block;
+ 	float: left; 
+ 	margin-left: 100px;
+}
+
+#reply {
+	/* border: 5px solid red; */
+	float: left;
+	height: auto;
+	min-width: 51%;
+	margin-top: 30px;
+	padding-left: 30px;
+}
+
+/* #right {
+	border: 5px solid red;
+	height: 946px;
+	min-width: 20%;
+	float: left;
+} */
+.ul {
+	float: left;
+	margin-left: 70px;
+}
+
+.made {
+	display: inline-block;
+	/* text-align: left; */
+}
+
+.footer {
+	float: left;
+	width: 100%;
+	background: #011627;
+	color: white;
+	padding: 10px;
+}
+
+.mydona {
+	background: #EE7785;
+}
+
+.bt {
+	display: inline-block;
+}
+
+.lecture {
+	display: inline-block;
+	margin-left: 30px;
+	background: #ffb20e;
+	opacity: 0.9;
+	border: 1px solid black;
+	border-radius: 30px;
+}
+
+#lec_img {
+	width: 300px;
+	height: 200px;
+}
+
+#lec_img {
+	border-radius: 30px 0px;
+}
+
+#pri {
+	font-size: 1.2em;
+}
+
+#abc {
+	float : right;
+}

@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+#myPage {
+	font: 400 15px/1.8 Lato, sans-serif;
+	min-width: 2000px;
+	min-height: 1000px;
+}
+
+.container {
+	padding: 80px 120px;
+	height: 800px;
+}
+
+.
+#myNavbar {
+	height: 600px;
+}
+
+.navbar {
+	font-family: Montserrat, sans-serif;
+	padding-top: 10px;
+	padding-bottom: 100px;
+	background-color: white;
+	border: 0;
+	font-size: 15px !important;
+	height: 130px;
+	opacity: 0.9;
+}
+
+.navbar-nav {
+	margin-right: 30px;
+	float: right;
+	text-align: center;
+	color: black;
+	.
+}
+
+.navbar-brand {
+	color: #339900 !important;
+	text-align: center;
+	margin: 5px;
+	font-size: 70px;
+}
+
+#navbar-brand {
+	color: #339900 !important;
+}
+
+.mySlides {
+	color: white;
+	font-weight: 400;
+	width: 100%;
+	height: 130px;
+	background: #343838;
+	padding: 1px 40px 10px 320px;
+}
+
+.band {
+	margin-top: 135px;
+	height: 1500px;
+	/*  border: 5px solid red; */
+}
+
+.band2 {
+	margin-top: 135px;
+	height: 1000px;
+	/*  border: 5px solid red; */
+}
+
+.rimg {
+	width: 700px;
+	height: 500px;
+	margin: 10px 50px 10px 50px;
+	margin-left: 700px;
+}
+
+.search {
+	margin-left: 43%;
+	margin-top: 5px;
+	float: left;
+}
+
+.content {
+	text-align : center;
+}
+.class {
+	/* border: 5px solid blue;  */
+	float: left;
+	height: 1000px;
+	min-width: 60%;
+	margin-left: 400px;
+	margin-right: 500px;
+	padding-top: 80px;
+	padding-left: 30px;
+	text-align : center;
+}
+
+.list {
+	position: absolute;
+	float: left;
+	width: 200px;
+	height: 250px;
+	padding-left: 30px;
+}
+
+#center {
+	min-height: 946px;
+	min-width: 40%;
+	/*  border: 5px solid blue; */
+	display: inline-block;
+	float: left;
+}
+
+p {
+	text-align: left;
+	font-size: 20px;
+}
+
+ #content1 {
+	font-size: 20px;
+	margin-left : 600px;
+}
+
+#content2, #content3 {
+	font-size: 20px;
+	margin-left : 700px;
+}
+
+h4 {
+	font-size: 40px;
+	color: #3DB7CC;
+	text-align: center;
+}
+
+.footer {
+	float: left;
+	width: 100%;
+	background: #011627;
+	color: white;
+	padding: 10px;
+}
+
+.ul {
+	float: left;
+	margin-left: 70px;
+}
+
+.made {
+	display: inline-block;
+	/* text-align: left; */
+}
+
+#hr {
+	color: white;
+}

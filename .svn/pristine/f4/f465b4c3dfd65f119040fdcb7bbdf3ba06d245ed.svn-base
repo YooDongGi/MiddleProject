@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="member">
+
+<!-- 회원가입 -->
+<insert id="joinmember" parameterClass="memVo">
+	INSERT INTO member VALUES(member_seq.nextVal, #mem_id#, #mem_pass#, #mem_nm#, 
+							  #nick_name#, #mem_email#,  3,  #mem_hp#,  0)
+</insert>
+
+<!-- 회원정보(즉, 로그인할 때 사용) -->
+<select id="getmember" parameterClass="String" resultClass="memVo"> 
+	SELECT * FROM member
+	WHERE mem_id = #mem_id# 
+</select>
+
+<!-- 아이디 중복 검사 -->
+<select id="idcheck" parameterClass="String" resultClass="int">
+	SELECT count(mem_id) from member where mem_id = #mem_id#  
+</select>
+
+<!-- 닉네임 중복 검사 -->
+<select id="nickcheck" parameterClass="String" resultClass="int">
+	SELECT count(nick_name) from member where nick_name = #nick_name#  
+</select>
+
+<!-- 로그인 비밀번호 검사 -->
+<select id="passwdcheck" parameterClass="String" resultClass="String"> 
+	SELECT mem_pass FROM member 
+	WHERE mem_id = #mem_id# 
+</select>
+
+<!-- 이메일 확인전송 -->
+<select id="getusermail" parameterClass="String" resultClass="String">
+	SELECT mem_email FROM member WHERE mem_id = #mem_id#
+</select>
+
+<!-- 이메일 인증완료 -->
+<update id="mailcheck" parameterClass="String">
+	UPDATE member SET state=1 WHERE mem_id=#mem_id#
+</update>
+
+<!-- 닉네임 변경 -->
+<update id="nickupdate" parameterClass="memVo">
+	UPDATE member SET nick_name=#nick_name# WHERE mem_id=#mem_id#
+</update>
+
+
+<!-- 내강의 목록 -->
+<select id="getmyclassList" parameterClass="int" resultClass="lectureVo">
+	SELECT mem_nm, intro, category, image 
+	FROM member m, lecture l
+	WHERE m.mem_no=l.mem_no
+	AND l.lec_title 
+	IN
+	( 
+	  SELECT lec_title
+	  FROM member m , myclass mc
+	  WHERE m.mem_no=mc.mem_no
+	  AND m.mem_no=#mem_no#
+	)
+</select>
+
+<!-- 회원탈퇴시 아이디/비번 일치여부 확인 -->
+<select id="idpwcheck" parameterClass="memVo" resultClass="int">
+	SELECT COUNT(*) FROM member WHERE mem_no = #mem_no# AND mem_pass=#mem_pass#
+</select>
+
+<!-- 회원탈퇴 완료 -->
+<update id="deletemember" parameterClass="int">
+	UPDATE member SET state = 2 WHERE mem_no = #mem_no#
+</update>
+
+<!-- 재능기부요청안 작성 -->
+<insert id="insertdonapply" parameterClass="donApplyVo">
+	INSERT INTO don_apply 
+	VALUES(#mem_no#, #don_conact#, #mem_field#, #mem_callmail#)
+</insert>
+
+<!-- 일반회원과 재능기부자에 대한 정보 -->
+<select id = "getAllMemberList" resultClass="memVo">
+	SELECT * FROM member WHERE state = 1 AND ( aut = 2 OR aut = 3 ) ORDER BY mem_no
+</select>
+<!-- 블랙 리스트 -->
+<select id = "blackList" resultClass = "memVo">
+	SELECT * FROM member WHERE state = 4 ORDER BY mem_no
+</select>
+
+<select id = "donMemberList" resultClass = "memVo">
+	SELECT * FROM member WHERE aut = 2 ORDER BY mem_no
+</select>
+
+<select id = "getAllTList" resultClass = "memVo">
+	SELECT * FROM member WHERE aut = 1 ORDER BY mem_no
+</select>
+
+<!-- 강사 - 내강의 정보 -->
+<select id="tclassList" parameterClass="int" resultClass="lectureVo">
+	SELECT * FROM lecture WHERE mem_no=#mem_no#
+</select>
+
+<!-- 강사- 내강의 총 수강생  -->
+<select id="tclasscnt" parameterClass="int" resultClass="int">
+		SELECT count(*)
+		FROM myclass
+		WHERE lec_title
+		IN (SELECT lec_title FROM lecture WHERE mem_no=#mem_no#)
+</select>
+
+<select id="getprofit" parameterClass="int" resultClass="lectureVo">
+		SELECT m.mem_no, SUM(price) sum_price, COUNT(mc.myclass_no) cnt
+		FROM lecture l, myclass mc , member m
+		WHERE l.lec_title=mc.lec_title 
+		AND m.mem_no = l.mem_no
+		GROUP BY l.mem_no
+		HAVING m.mem_no=#mem_no#
+</select>
+
+</sqlMap>

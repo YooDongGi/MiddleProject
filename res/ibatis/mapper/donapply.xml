@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="don">
+
+
+<select id="donapplyList" resultClass="donapplyVo"> 
+		select d.mem_no,
+d.don_conact,
+d.mem_field,
+d.mem_callmail,
+m.mem_NM from don_apply d ,member m where m.mem_no = d.mem_no
+</select>
+
+<delete id="deletedonapply" parameterClass = "int">
+	delete don_apply where mem_no = #mem_no#
+</delete>
+
+
+	<update id = "updatedon" parameterClass = "int" >
+		update member set
+			aut = 2
+			where mem_no = #mem_no#
+	</update>
+
+</sqlMap>

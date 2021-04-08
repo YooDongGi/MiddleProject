@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/dtd.map-2.dtd">
+	
+<sqlMap namespace="post">
+	
+	<!-- 공지사항 전체 조회 -->
+	<select id = "getAllNotice" resultClass = "postVo" >
+		SELECT p.*, m.nick_name FROM post p, member m WHERE m.mem_no = p.mem_no AND board_no = 1 ORDER BY post_no DESC
+	</select> 
+
+	<!-- 묻고답하기 전체 조회 -->
+	<select id = "getAllQnA" resultClass = "postVo">
+		SELECT p.*, m.nick_name FROM post p, member m WHERE m.mem_no = p.mem_no AND board_no = 2 ORDER BY post_no DESC
+	</select>
+	
+	<!-- 게시글 번호를 이용해서 게시글을 조회 -->
+	<select id = "getBoardView" resultClass = "postVo" parameterClass = "int">
+		SELECT p.*, m.nick_name FROM post p, member m WHERE m.mem_no = p.mem_no AND post_no = #data#
+	</select>
+	
+	
+	<!-- 게시글 등록 -->
+	<insert id = "insertBoard" parameterClass = "postVo">
+		INSERT INTO post (post_no , board_no, mem_no, post_title, post_cont, post_date, do_video) 
+			VALUES(post_seq.nextVal, #board_no#, #mem_no#, #post_title#, #post_cont#, SYSDATE,  #do_video#) 
+			<selectKey resultClass="int" keyProperty="post_no">
+				select post_seq.currval from dual
+			</selectKey>
+ 	</insert>
+ 	
+ 	<!-- 게시글 삭제 -->
+ 	<delete id = "deleteBoard" parameterClass = "int">
+ 		DELETE post WHERE post_no = #data#
+ 	</delete>
+ 	
+ 	<!-- 게시글 수정 -->
+ 	<update id = "updateBoard" parameterClass = "postVo">
+ 		UPDATE post SET post_title = #post_title# , post_cont = #post_cont# , post_date = SYSDATE WHERE post_no = #post_no#
+ 	</update>
+ 	
+ 	
+	<!-- 게시글 번호에 등록된 댓글목록 조회 -->
+	<select id = "getReplyView" resultClass = "replyVo" parameterClass = "int">
+		SELECT r.*, m.nick_name FROM reply r, member m WHERE m.mem_no = r.mem_no AND post_no = #data# ORDER BY reply_no DESC
+	</select>
+	
+	<insert id = "insertReply" parameterClass = "replyVo">
+		INSERT INTO reply VALUES (reply_seq.nextVal, #post_no#, #mem_no#, #reply_cont#, SYSDATE)
+		<selectKey resultClass = "int" keyProperty = "reply_no">
+			SELECT reply_seq.currval FROM dual
+		</selectKey>
+	</insert>
+	
+	<delete id = "deleteReply" parameterClass = "int">
+		DELETE reply WHERE reply_no = #data#
+	</delete>
+	
+	<select id = "boardSearch" parameterClass = "postVo" resultClass = "postVo">
+		SELECT p.*, m.nick_name FROM post p, member m WHERE m.mem_no = p.mem_no AND board_no = #board_no# AND post_title LIKE '%'||#post_title#||'%' ORDER BY post_no DESC
+	</select>
+	
+	
+	<select id = "getAllDon" resultClass = "postVo">
+		SELECT p.*, m.nick_name FROM post p, member m WHERE m.mem_no = p.mem_no AND board_no = 3 ORDER BY post_no DESC
+	</select>
+
+ 	<update id = "updateDonBoard" parameterClass = "postVo">
+ 		UPDATE post SET post_title = #post_title# , post_cont = #post_cont# , post_date = SYSDATE, do_video = #do_video# WHERE post_no = #post_no#
+ 	</update>
+</sqlMap>

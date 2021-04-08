@@ -1,0 +1,217 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+      } 
+  h3, h4, h5 {
+    margin: 10px 0 30px 0;
+    font-size: 20px;
+    color: black;
+  }
+   .container {
+    padding: 80px 120px;
+    height: 800px;
+  } 
+  .#myNavbar{
+  height: 600px;
+  }
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    padding-bottom: 100px;
+    background-color: white; 
+    border: 0;
+    font-size: 15px !important;
+    height: 130px;
+    opacity: 0.9;
+  }
+  .navbar-nav{
+     float:right;
+     text-align: center;
+     color: black;
+  }
+   .navbar .navbar-brand { 
+    color: #339900 !important;
+    text-align: center;
+    margin: 5px;
+  }
+  .navbar-brand{
+  font-size: 70px;
+  text-align: center;
+  }
+  .navbar-nav li a:hover {
+    color: #339900 !important;
+     text-align: center;
+  }
+  .navbar-nav li. {
+    color: #339900 !important;
+   background-color: #29292c !important; 
+   text-align: center;
+  }
+  #left{
+  width : 220px;
+  height :800px;
+  float:left;
+  border: 5px solid white;
+  padding : 20px;
+  margin-left: 200px;
+  background: white;
+  font-size: 1.1em;
+  }
+  #left a:hover{
+  color: gray;
+  font-size: 1.5em;
+  text-decoration: underline;
+  }
+  #band{
+  margin-top: 135px;
+  }
+.ul{
+ float: left;
+ margin-left: 70px;
+}
+.made{
+display:inline-block;
+/* text-align: left; */
+}
+.footer{
+   float: left;
+   width: 100%;
+   background: #011627;
+   color: white;
+   padding: 10px;
+}
+.mySlides {
+   color: black;
+   height:150px; 
+   background: #2EC4B6;
+   padding : 10px 40px 10px 160px; 
+}
+.dona{
+   font-size: 20px;
+   font-family: sans-serif;
+   font-weight: 10px;
+}
+.w3-section{
+   margin-left: 45%;
+   float: right;
+}
+.ff{
+     width :1000px;
+     height :800px;
+     border: 2px solid black;
+ }
+  </style>
+
+</head>
+<body>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+      <a class="navbar-brand" href="#myPage"><strong>Learning Market</strong></a>
+      
+    <div class="collapse navbar-collapse" id="myNavbar">
+    </div>
+      <ul class="nav navbar-nav navbar-center">
+        <li><a href="#home">홈</a></li>
+        <li><a href="#mylecture">강의실</a></li>
+        
+        <li><a href="#mypage">마이페이지</a></li>
+        <li><a href="#donation">재능기부</a></li>
+        <li><a href="#login">로그인</a></li>
+        <li><a href="#contact">회원가입</a></li>
+        <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+                      <span class="caret"></span></a> 
+               <ul class="dropdown-menu">
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">재능기부신청</a></li>
+                  <li><a href="#">멤버십신청</a></li>
+               </ul>
+            </li>
+      </ul>
+</nav>
+
+
+
+<!-- Container (The Band Section) -->
+
+ <div id="band"> 
+ 
+
+    <div class="mySlides" style="width: 100%">
+         <br>
+         <span class="dona">묻고 답해요</span>
+         <br>
+         <span class="dona">함께하는 러닝마켓 커뮤니티 </span> 
+         <span class="dona">모르면 묻고, 해답을 찾아보세요 </span><br> 
+      </div>
+ 
+ 
+<div id="left">
+<h2><strong>카테고리</strong></h2>
+<br>
+   <a href="" target="ff" style="color: black">커뮤니티</a><br><br>
+   <a href="" target="ff" style="color: black">묻고 답하기</a><br><br>
+   <a href="http://localhost/servletTest3/lecture/lectureList.do" target="ff" style="color: black">강의</a><br><br>
+</div>
+ 
+ <iframe class="ff" name="ff" > </iframe>
+</div>
+
+
+
+<!-- Footer -->
+   <footer class="footer">
+      <div class="ul">
+         <ul>
+            <li>러닝마켓</li>
+            <li>LM소개</li>
+
+         </ul>
+      </div>
+      <div class="ul">
+         <ul>
+            <li><a>고객센터</a></li>
+            <li>이용약관</li>
+            <li>개인정보취급방침</li>
+         </ul>
+
+      </div>
+
+      <div class="ul">
+         <ul>
+            <li><a>커뮤니티</a></li>
+            <li>묻고답하기</li>
+
+         </ul>
+
+   <hr style="color:white">
+      </div>
+      <br> <br> <br> <br>
+      <p class="made">
+         Learning Made By <a href="https://www.w3schools.com"
+            data-toggle="tooltip" title="Visit w3schools">대덕인재개발원</a>
+         (주)Learning Market 사업자 정보<br> (주)Learning Market | 대표자 : 유동기
+         |사업자번호 : 000-0000-0000 사업자 정보 확인 | 개인정보보호책임자 : 유동기 | 통신판매업
+         :2020-중구대흥동 A-0001<br> 주소 : 대전광역시 중구 대흥동 500 영민빌딩 4층 402호 | 이메일
+         : Learning Market@korea.com<br>
+      </p>
+
+   </footer>
+
+
+</body>
+</html>

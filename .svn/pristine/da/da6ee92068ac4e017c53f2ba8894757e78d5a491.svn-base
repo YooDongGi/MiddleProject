@@ -1,0 +1,33 @@
+package vo;
+
+public class BasketVO {
+	private int mem_no;
+	private int lec_title;
+	private String basket_date;
+	private int state;
+	public int getMem_no() {
+		return mem_no;
+	}
+	public void setMem_no(int mem_no) {
+		this.mem_no = mem_no;
+	}
+	public int getLec_title() {
+		return lec_title;
+	}
+	public void setLec_title(int lec_title) {
+		this.lec_title = lec_title;
+	}
+	public String getBasket_date() {
+		return basket_date;
+	}
+	public void setBasket_date(String basket_date) {
+		this.basket_date = basket_date;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	
+}

@@ -1,0 +1,143 @@
+# 이 문서는 사용할 URI와 Mapping되는 Action객체를 연결
+
+# 문서 작성법 
+# 요청URI=IAction을 구현한 실제 실행할 객체
+
+
+#/board/NoticeList.do=action.AllNoticeBoardAction
+#/board/QnAList.do=action.AllQnABoardAction
+
+
+#메인 
+/main.do=action.MainAction
+
+# 관리자 페이지
+/manager/memberList.do=manager.action.MemberListAction
+/manager/Accept.do=manager.action.AcceptAction
+/manager/TeacherList.do=manager.action.TeacherListAction
+# 신고처리
+/manager/updateReport.do=manager.action.UpdateReportAction
+/manager/deleteReport.do=manager.action.DeleteReportAction
+
+/manager/donmemberList.do=manager.action.DonMemberListAction
+/manager/disposeDonApply.do=manager.action.DisposeDonApplyAction
+/manager/deleteDonApply.do=manager.action.DeleteDonApplyAction
+
+
+# 공지사항 게시판 목록 조회
+/board/NoticeBoard.do=board.action.NoticeBoardAction
+# Q&A 게시판 목록 조회
+/board/QnABoard.do=board.action.QnABoardAction
+# 글 조회
+/board/BoardView.do=board.action.BoardViewAction
+# 검색
+/board/Search.do=board.action.BoardSearchAction
+# 글 작성 폼 
+/board/BoardAddForm.do=board.action.BoardAddFormAction
+# 글 쓰기
+/board/BoardAdd.do=board.action.BoardAddAction
+# 글 삭제
+/board/BoardDelete.do=board.action.BoardDeleteAction
+# 글 수정 폼
+/board/BoardUpdateForm.do=board.action.BoardUpdateFormAction
+# 글 수정
+/board/BoardUpdate.do=board.action.BoardUpdateAction
+# 신고
+/board/BoardReport.do=board.action.BoardReportAction
+# 댓글 등록
+/board/ReplyAdd.do=board.action.ReplyAddAction
+# 댓글 삭제
+/board/ReplyDelete.do=board.action.ReplyDeleteAction
+
+
+# 로그인 폼
+/member/loginForm.do=action.LoginFormAction
+# 로그인
+/member/login.do=action.LoginAction
+# 로그아웃
+/member/logoutForm.do=action.LogoutAction
+# 회원가입 폼
+/member/joinForm.do=action.JoinFormAction
+# 회원가입
+/member/join.do=action.JoinAction
+# ID 중복 검사
+/member/idcheck.do=action.IdCheckAction
+# 메일 검사
+/member/mailcheck.do=action.MailCheckAction
+
+
+# 마이페이지  
+/memberInfo/mypageForm.do=action.MyPageFormAction
+# 마이페이지- 회원수정(닉네임)
+/memberInfo/UpdateInfo.do=action.UpdateInfoAction
+# 마이페이지- 내강의목록
+/memberInfo/myclasslist.do=action.MyClassListAction
+# 마이페이지- 회원탈퇴(비밀번호 일치여부)
+/memberInfo/Infodeleteform.do=action.InfoDeleteFormAction
+# 마이페이지- 회원탈퇴(탈퇴완료)
+/memberInfo/Infodelete.do=action.InfoDeleteAction
+
+
+# 강사마이페이지
+/teacherInfo/teacherform.do=action.TeacherFormAction
+# 강사마이페이지 - 내강의 정보
+/teacherInfo/techerclass.do=action.TeacherClassAction
+# 강사마이페이지 - 실적 확인
+/teacherInfo/profitcheck.do=action.ProfitCheckAction
+
+# 재능기부요청페이지 - 
+/main/List_don.do=action.ListDonAction
+/board/DonBoard.do=action.DonBoardAction
+
+# 재능기부 게시글 추가
+/board/donBoardAddForm.do = action.DonBoardAddFormAction
+
+# 재능기부요청페이지 - 재능기부 요청안
+/main/Listdon_apply.do=action.ListDonApplyAction
+
+/board/DonBoardView.do=action.DonBoardViewAction
+# 재능기부 게시글 추가
+/board/donBoardAdd.do = action.DonBoardAddAction
+
+/board/donBoardUpdateForm.do = action.DonBoardUpdateFormAction
+
+/board/donBoardUpdate.do = action.DonBoardUpdateAction
+
+
+# 소개 페이지
+/main/main_intro.do=action.IntroAction
+# 
+/main/Read.do=action.ReadAction
+
+
+# 장바구니 페이지
+/basket/BasketList.do=basket.action.BasketListAction
+# 장바구니 카운트
+/basket/basketCount.do=basket.action.BasketCountAction
+# 장바구니, 위시리스트 등록
+/basket/basketInsert.do=basket.action.BasketInsertAction
+# 장바구니 목록 
+/basket/basketList.do=basket.action.BasketListAction
+# 수강 바구니 - 위시 리스트 이동
+/basket/Basketmove.do=basket.action.BasketMoveAction
+# 장바구니 삭제
+/basket/BasketDelete.do=basket.action.BasketDeleteAction
+
+# 전체 결제
+/basket/basketAllBuy.do=basket.action.BasketAllbuyAction
+
+##### 강의 
+# 강의 리스트?
+/lecture/lectureList.do=lecture.action.LectureListAction
+# 음
+/lecture/lecture.do=lecture.action.LectureAction
+/lecture/lectureUpdate.do=lecture.action.LectureUpdate
+/lecture/lectureUpdateForm.do=lecture.action.LectureUpdateForm
+/lecture/lectureCategory.do=lecture.action.LectureCategory
+/lecture/lectureDif.do=lecture.action.LectureDif
+/lecture/lectureInsertForm.do=lecture.action.LectureInsertForm
+/lecture/lectureInsert.do=lecture.action.LectureInsert
+/lecture/classInsert.do=lecture.action.ClassInsert
+/lecture/classInsertForm.do=lecture.action.ClassInsertForm
+/lecture/classUpdate.do=lecture.action.ClassUpdate
+/lecture/classUpdateForm.do=lecture.action.ClassUpdateForm

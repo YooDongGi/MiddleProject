@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="basket">
+	
+	<select id="getBasketList" resultClass = "basketVo" parameterClass = "basketVo">
+		SELECT l.lec_nm, l.price, l.image , b.* FROM basket b, lecture l WHERE b.lec_title = l.lec_title AND state = #state# AND b.mem_no = #mem_no#
+	</select>
+	
+	<insert id = "insertBasket" parameterClass = "basketVo">
+		INSERT INTO basket (mem_no, lec_title, basket_date, state)
+		VALUES (#mem_no#, #lec_title#, SYSDATE, #state#)
+<!-- 		<selectKey resultClass = "int" keyProperty="mem_no"> -->
+<!-- 			 SELECT COUNT -->
+<!-- 		</selectKey> -->
+	</insert>
+	
+	<select id = "getBasketCount" parameterClass = "basketVo" resultClass = "int">
+		SELECT COUNT(*) cnt FROM basket WHERE lec_title = #lec_title# AND mem_no = #mem_no#
+	</select>
+	
+	<update id = "moveBasket" parameterClass = "basketVo">
+		UPDATE basket SET state = #state# WHERE mem_no = #mem_no# AND lec_title = #lec_title#
+	</update>
+	
+	<delete id = "deleteBasket" parameterClass = "basketVo">
+		DELETE basket WHERE mem_no = #mem_no# AND lec_title = #lec_title#
+	</delete>
+	
+	<insert id = "insertMyclass" parameterClass = "myclassVo">
+		INSERT INTO myclass (myclass_no,mem_no,lec_title,pay_date)
+		VALUES ((select nvl(max(myclass_no),0)+1 from myclass) ,#mem_no#,#lec_title#, sysdate)
+				
+				<selectKey resultClass = "int" keyProperty="myclass_no">
+			 select max(myclass_no) from myclass
+		</selectKey>
+	</insert>	
+</sqlMap>

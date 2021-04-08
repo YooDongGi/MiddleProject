@@ -1,0 +1,138 @@
+<%@page import="vo.LectureVO"%>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<%!String category = null;%>
+<%!String dif = null;%>
+<%!List<LectureVO> lectureList;%>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+
+.btnimg{
+width: 200px;
+height: 200px;
+}
+.imgbtn{
+padding: 1;
+border: 0.1;
+/* background: none; */
+}
+#List{
+clear: both;
+}
+
+.bt{
+float : left;
+}
+.lecture{
+border: 1px;
+border: solid blue;
+margin: 5px;
+float: left;
+width: 307px;
+height: 260px;
+}
+</style>
+
+  <script type="text/javascript">
+ document.onkeydown = function(e) {
+  var evtK = (e) ? e.which : window.event.keyCode;
+  var isCtrl = ((typeof isCtrl != 'undefiend' && isCtrl) || ((e && evtK == 17) || (!e && event.ctrlKey))) ? true : false;
+  
+  if((isCtrl && evtK == 82) || evtK == 116) {
+   if(e) { evtK = 505; } else { event.keyCode = evtK = 505; }
+  }
+  
+  if(evtK == 505) {
+
+   // 자바스크립트에서 현재 경로는 받아내는 메소드로 대치.
+
+   location.reload(location.href);
+   return false;
+  }
+ }
+ 
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<form class = "bt" action="<%=request.getContextPath()%>/lecture/lectureCategory.do" method="post">
+<input type="hidden" name = "category" value="자바">
+<button class = "imgbtn"><img class="btnimg" src="../image/java.png" alt="이미지없음"></button>
+</form>
+
+<form class = "bt" action="<%=request.getContextPath()%>/lecture/lectureCategory.do" method="post">
+<input type="hidden" name = "category" value="HTML">
+<button class = "imgbtn"><img class="btnimg" src="../image/HTML.png" alt="이미지없음"></button>
+</form>
+<hr id=List>
+
+<%category = (String)request.getAttribute("category");
+if(category != null){
+%>
+
+<form action="<%=request.getContextPath()%>/lecture/lectureDif.do" method="post">
+<input type="hidden" name = "category" value="<%=category %>">
+<input type="hidden" name = "dif" value="초급">
+<button>초급</button>
+</form>
+<% }%>
+
+<hr id=List>
+
+<form action="<%=request.getContextPath()%>/lecture/lectureInsertForm.do" method="post">
+회원번호:<input type="text" name = "mem_no">
+<button>수강등록</button>
+</form>
+
+<hr id = List>
+<%
+	// 서블릿에서 만들어서 보낸 데이터를 보여준다.
+	lectureList = 
+		(List<LectureVO>)request.getAttribute("lectureList");
+
+	int count = 0;
+	for(LectureVO vo : lectureList){
+		count++;
+%>
+
+	
+	<div class = "lecture" style=" cursor: pointer;" onclick="location.href='<%=request.getContextPath()%>/lecture/lecture.do?Lec_title=<%=vo.getLec_title() %>'">
+		<h3><%=vo.getLec_nm() %></h3>
+	<video oncontextmenu="return false;" id="myVideo" width="300">
+		<source src="../video/<%=vo.getPreview_video() %>" type="video/mp4">
+	</video>
+	<br>
+	</tr>
+	<br>
+	</div>
+<%
+	if(count != 0 && count % 3 == 0){
+		%>
+		<br><br>
+	<% }
+
+}%>
+
+<br>
+
+
+</body>
+</html>

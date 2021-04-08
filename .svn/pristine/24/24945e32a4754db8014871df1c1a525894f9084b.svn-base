@@ -1,0 +1,29 @@
+<%@page import="java.util.List"%>
+<%@page import="vo.TestVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<% 
+List<TestVO> testList = 
+(List<TestVO>)request.getAttribute("testList");
+
+for(TestVO tvo : testList){
+%>	
+<form action="<%=request.getContextPath()%>/lecture/testStart.do" method="post">
+<input type="hidden" name = "test_type" value="<%=tvo.getTest_type() %>">
+<input type="hidden" name = "Lec_title" value="<%=request.getAttribute("Lec_title")%>">
+<button type="submit"><%=tvo.getTest_type() %></button>
+</from>
+<%	
+}
+%>
+</body>
+</html>
